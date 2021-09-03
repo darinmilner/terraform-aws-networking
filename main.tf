@@ -92,7 +92,7 @@ resource "aws_subnet" "mtc-private-subnet" {
 }
 
 resource "aws_db_subnet_group" "mtc-rds-subnetgroup" {
-  count      = var.db-subnet-group == "true" ? 1 : 0
+  count      = var.db_subnet_group == "true" ? 1 : 0
   name       = "mtc-rds-subnetgroup"
   subnet_ids = aws_subnet.mtc-private-subnet.*.id
   tags = {
